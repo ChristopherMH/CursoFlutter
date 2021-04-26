@@ -1,4 +1,6 @@
+// import 'package:componentes/pages/alert_page.dart';
 import 'package:componentes/src/providers/menu_provider.dart';
+import 'package:componentes/src/utils/icono_string_util.dart';
 import 'package:flutter/material.dart';
  
 class HomePage extends StatelessWidget{
@@ -7,7 +9,7 @@ class HomePage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('componentes'),
+        title: Text('App componentes'),
       ),
       body: _lista(),
     );
@@ -41,7 +43,7 @@ return FutureBuilder(
 
 }
 
- List <Widget> _listaitems(List<dynamic> data,BuildContext context) {
+ List <Widget> _listaitems(List<dynamic> data, BuildContext context) {
     /*return [
       ListTile( title: Text('hola mundo')),
       Divider(),
@@ -54,10 +56,16 @@ return FutureBuilder(
     data.forEach((opt){
        final widgettemp=ListTile(
         title:Text(opt['texto']),
-        leading: Icon(Icons.account_circle, color: Colors.blue),
+        leading: getIcon(opt['icon']),
         trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
         onTap: (){
-          
+          Navigator.pushNamed(context, opt['ruta']);
+          // final route = MaterialPageRoute(
+          //   builder: (context){
+          //     return AlertPage();
+          //   }
+          // );
+          // Navigator.push(context, route);
         },
        );
        opciones..add(widgettemp)
