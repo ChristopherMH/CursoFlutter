@@ -74,7 +74,7 @@ class CardPage extends StatelessWidget {
           // ),
           Container(
             padding: EdgeInsets.all(10.0),
-            child: Text('The Legend of Zelda: BotW Landscape'))
+            child: Text('The Legend of Zelda: Breath of the Wild'))
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:componentes/pages/alert_page.dart';
+import 'package:componentes/pages/animated_container.dart';
 import 'package:componentes/pages/avart_page.dart';
 import 'package:componentes/pages/card_page.dart';
 import 'package:componentes/pages/home_page.dart';
@@ -9,6 +10,7 @@ Map<String, WidgetBuilder> getApplicationRoutes(){
     '/' : (BuildContext context) => HomePage(),
     'alert' : (BuildContext context) => AlertPage(),
     'avatar' : (BuildContext context) => AvatarPage(),
-    'card': (BuildContext context) => CardPage()
+    'card': (BuildContext context) => CardPage(),
+    'animatedContainer': (BuildContext context) => AnimatedContainerPage()
   };
 }
