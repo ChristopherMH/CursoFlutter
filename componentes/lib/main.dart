@@ -30,6 +30,11 @@ class MyApp extends StatelessWidget {
           builder: (context) => AlertPage()
         );
       },
+      // darkTheme: ThemeData(
+      //   brightness: Brightness.dark,
+      //   primarySwatch: Colors.blue
+      // ),
+      // themeMode: ThemeMode.dark,
     );
   }
 }
