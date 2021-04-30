@@ -8,7 +8,9 @@ class SliderPage extends StatefulWidget {
 
 class _SliderPageState extends State<SliderPage> {
   double _valorSlider = 100.0;
-  // @override
+  bool _blockearCheck = false;
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(
@@ -19,7 +21,8 @@ class _SliderPageState extends State<SliderPage> {
          child: Column(
            children: <Widget> [
              _crearSlider(),
-             Divider(),
+             _checkBox(),
+             _crearSwitch(),
              Expanded(child: _crearImagen())
            ],
          )
@@ -34,8 +37,8 @@ class _SliderPageState extends State<SliderPage> {
       divisions: 20,
       value: _valorSlider,
       min: 0.0, 
-      max: 100.0,
-      onChanged: (value) {
+      max: 400.0,
+      onChanged: (_blockearCheck) ? null : (value) {
         // print(value);
         setState(() {
           _valorSlider = value;
@@ -49,6 +52,38 @@ class _SliderPageState extends State<SliderPage> {
       image: NetworkImage('http://www.nintenderos.com/wp-content/uploads/2014/03/257298_2138977193022_1203913981_2639353_4230429_o.jpg'),
       width: _valorSlider,
       fit: BoxFit.contain,
+    );
+  }
+
+  Widget _checkBox() {
+    // return Checkbox(
+    //   value: _blockearCheck, 
+    //   onChanged: (valor){
+    //     setState(() {
+    //       _blockearCheck = valor;
+    //     });
+    //   }
+    // );
+    return CheckboxListTile(
+      value: _blockearCheck,
+      onChanged: (valor){
+        setState(() {
+          _blockearCheck = valor;
+        });
+      },
+      title: Text('Bloquear Slider'),
+    );
+  }
+
+  Widget _crearSwitch() {
+    return SwitchListTile(
+      value: _blockearCheck,
+      onChanged: (valor){
+        setState(() {
+          _blockearCheck = valor;
+        });
+      },
+      title: Text('Bloquear Slider'),
     );
   }
 }
