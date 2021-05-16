@@ -18,7 +18,6 @@ class Peliculas {
 
 
 class Pelicula {
-
   int voteCount;
   int id;
   bool video;
