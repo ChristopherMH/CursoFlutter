@@ -10,26 +10,24 @@ class Peliculas {
       final pelicula = new Pelicula.fromJsonMap(item);
       items.add( pelicula );
     }
-
   }
-
 }
 
 class Pelicula {
-  int voteCount;
-  int id;
-  bool video;
-  double voteAverage;
-  String title;
-  double popularity;
-  String posterPath;
-  String originalLanguage;
-  String originalTitle;
-  List<int> genreIds;
-  String backdropPath;
-  bool adult;
-  String overview;
-  String releaseDate;
+  int? voteCount;
+  int? id;
+  bool? video;
+  double? voteAverage;
+  String? title;
+  double? popularity;
+  String? posterPath;
+  String? originalLanguage;
+  String? originalTitle;
+  List<int>? genreIds;
+  String? backdropPath;
+  bool? adult;
+  String? overview;
+  String? releaseDate;
 
   Pelicula({
     this.voteCount,

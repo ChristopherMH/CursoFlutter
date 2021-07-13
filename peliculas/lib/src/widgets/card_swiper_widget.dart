@@ -5,7 +5,7 @@ import 'package:peliculas/src/models/pelicula_model.dart';
 class CardSwiper extends StatelessWidget {
   final List<Pelicula> peliculas;
 
-  CardSwiper({@required this.peliculas});
+  CardSwiper({required this.peliculas});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class CardSwiper extends StatelessWidget {
           
 
           return Hero(
-              tag: peliculas[index].id,
+              tag: peliculas[index].id!,
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(20.0),
                   child: GestureDetector(

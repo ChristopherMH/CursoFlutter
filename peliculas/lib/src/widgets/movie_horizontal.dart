@@ -6,7 +6,7 @@ class MovieHorizontal extends StatelessWidget {
   final List <Pelicula> peliculas;
   final Function siguientePagina;
 
-  MovieHorizontal({@required this.peliculas, @required this.siguientePagina});
+  MovieHorizontal({required this.peliculas, required this.siguientePagina});
 
 
   final _pageController = new PageController(
@@ -27,7 +27,7 @@ class MovieHorizontal extends StatelessWidget {
     });
 
     return Container(
-      height: _screenSize.height * 0.30,
+      height: _screenSize.height * 0.3,
       child: PageView.builder(
         pageSnapping: false,
         // children: _tarjetas(context),
@@ -59,7 +59,7 @@ class MovieHorizontal extends StatelessWidget {
             ),
             SizedBox(height: 5.0,),
             Text(
-              pelicula.title,
+              pelicula.title!,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.caption,
             )
@@ -92,7 +92,7 @@ class MovieHorizontal extends StatelessWidget {
             ),
             SizedBox(height: 5.0,),
             Text(
-              pelicula.title,
+              pelicula.title!,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.caption,
             )

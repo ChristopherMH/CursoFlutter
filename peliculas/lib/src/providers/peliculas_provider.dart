@@ -14,7 +14,7 @@ class PeliculasProvider{
 
   bool _cargando = false;
 
-  List <Pelicula> _populares = new List();
+  List <Pelicula> _populares = [];
 
   final _popularesStreamController = StreamController<List <Pelicula>>.broadcast();
 
@@ -23,7 +23,7 @@ class PeliculasProvider{
   Stream <List <Pelicula>> get popularesStream => _popularesStreamController.stream;
 
   void disposeStreams(){
-    _popularesStreamController?.close();
+    _popularesStreamController.close();
   }
 
   Future <List <Pelicula>> _procesarRespuesta(Uri url) async{
